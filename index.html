@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>High Jewelry</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header, footer {
+      background: linear-gradient(to right, #8e44ad, #c0392b);
+      color: white;
+      text-align: center;
+      padding: 1.2em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ddd;
+    }
+
+    input, textarea, button {
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #8e44ad;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c0392b;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2em;
+    }
+
+    .jewel {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0 0 10px #ccc;
+      text-align: center;
+    }
+
+    .jewel img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .category-title {
+      font-size: 1.6em;
+      margin-bottom: 0.5em;
+      color: #8e44ad;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .login-options label {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+
+    .login-options a {
+      color: #8e44ad;
+      text-decoration: none;
+    }
+
+    .login-options a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header id="mainHeader" class="hidden">
+    <h1>High Jewelry</h1>
+    <nav>
+      <a href="#" onclick="showSection('gallery')">Gallery</a>
+      <a href="#" onclick="showSection('appointment')">Book Appointment</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <section id="login" class="section active container">
+    <h2 class="center">Login to Explore High Jewelry</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <div class="login-options">
+        <label><input type="checkbox" id="rememberMe"> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section id="gallery" class="section container">
+    <h2 class="center">Jewelry Collection</h2>
+
+    <h3 class="category-title">Rings</h3>
+    <div class="gallery">
+      <div class="jewel">
+        <img src="ring.webp" alt="Diamond Ring"/>
+        <h3>Diamond Ring</h3>
+        <p>Elegant handcrafted ring with finest cut diamonds.</p>
+      </div>
+      <div class="jewel">
+        <img src="ruby" alt="Ruby Ring"/>
+        <h3>Ruby Ring</h3>
+        <p>Ruby-centered gold ring with intricate detailing.</p>
+      </div>
+    </div>
+
+    <h3 class="category-title">Necklaces</h3>
+    <div class="gallery">
+      <div class="jewel">
+        <img src="necklace.jpeg" alt="Emerald Necklace"/>
+        <h3>Emerald Necklace</h3>
+        <p>Luxurious necklace adorned with rare emeralds.</p>
+      </div>
+      <div class="jewel">
+        <img src="pearl.jpeg" alt="Pearl Necklace"/>
+        <h3>Pearl Necklace</h3>
+        <p>Classic white pearl necklace with gold clasp.</p>
+      </div>
+    </div>
+
+    <h3 class="category-title">Bracelets</h3>
+    <div class="gallery">
+      <div class="jewel">
+        <img src="rbracelt.jpeg" alt="Ruby Bracelet"/>
+        <h3>Ruby Bracelet</h3>
+        <p>Stunning bracelet made with pure rubies and gold.</p>
+      </div>
+      <div class="jewel">
+        <img src="diamond.jpeg" alt="Diamond Bracelet"/>
+        <h3>Diamond Bracelet</h3>
+        <p>Elegant bracelet featuring channel-set diamonds.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment" class="section container">
+    <h2 class="center">Book An Appointment</h2>
+    <form id="appointmentForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="date" id="date" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer id="mainFooter" class="hidden">
+    <p>© 2025 High Jewelry. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function logout() {
+      showSection('login');
+      document.getElementById('mainHeader').classList.add('hidden');
+      document.getElementById('mainFooter').classList.add('hidden');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      if (user && pass) {
+        alert("Welcome to High Jewelry!");
+        document.getElementById('mainHeader').classList.remove('hidden');
+        document.getElementById('mainFooter').classList.remove('hidden');
+        showSection('gallery');
+      } else {
+        alert("Please enter valid credentials.");
+      }
+    });
+
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const date = document.getElementById('date').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email.includes('@') && date && message) {
+        alert("Appointment booked successfully!");
+        this.reset();
+      } else {
+        alert("Please fill in all fields correctly.");
+      }
+    });
+  </script>
+</body>
+</html>
