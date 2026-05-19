@@ -30,9 +30,9 @@ Tested on:
 
 ## 🚀 How to Run
 
-1. Download or clone the repo.
-2. Open `index.html` in your web browser.
-3. Interact with login → view gallery → book an appointment.
+1. Download or clone the repo
+2. Open `index.html` in your web browser
+3. Interact with login → view gallery → book an appointment
 
 ---
 
