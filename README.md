@@ -13,9 +13,9 @@
 
 ## 📷 Screenshots (Add in repo or upload here)
 
-1. **Login Page** – Styled form with validation  
-2. **Gallery Page** – Elegant grid layout for jewelry items  
-3. **Appointment Page** – Form for scheduling with validation
+1. **Login Page** – Styled form with validation.
+2. **Gallery Page** – Elegant grid layout for jewelry items.  
+3. **Appointment Page** – Form for scheduling with validation.
 
 ---
 
